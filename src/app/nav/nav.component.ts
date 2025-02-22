@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
   public navElements: string[] = ["Home", "TodoList"];
+  public routingPaths: string[] = ["/", "/todolist"]
 
 }
