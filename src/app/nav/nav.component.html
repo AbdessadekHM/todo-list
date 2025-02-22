@@ -1,6 +1,7 @@
-<nav>
-   <ul>
-    <li *ngFor="let element of navElements">
+<nav class="flex justify-between px-4 py-2 bg-blue-400 text-white items-center h-[8%]">
+    <h1 class="text-2xl">TodoList</h1>
+   <ul class="flex justify-between w-40 text-[0.8rem]">
+    <li *ngFor="let element of navElements" class="hover:scale-[1.01] cursor-pointer">
         {{element}}
     </li>
    </ul> 
