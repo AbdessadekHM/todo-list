@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import type { TodoList } from '../models';
 
 @Component({
   selector: 'app-todo-list',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './todo-list.component.css'
 })
 export class TodoListComponent {
+  public todoList:TodoList[] | undefined;
+
 
 }
