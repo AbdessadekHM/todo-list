@@ -1,2 +1,2 @@
 # TodoList
-A simple project for learning angular 
+A simple project for learning **Angular**.
