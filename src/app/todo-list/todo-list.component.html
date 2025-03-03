@@ -1,14 +1,30 @@
-<div class="h-full flex flex-col justify-center items-center">
-   <div class="w-[45%] rounded-lg h-1/2 border border-gray-400 p-6">
+<div class="h-full flex flex-col justify-center items-center" >
+   <div class="w-[45%] rounded-lg h-fit border border-gray-400 p-6">
         <div class="flex justify-between w-full ">
-            <button class="rounded-sm bg-blue-600 hover:bg-blue-400 text-white cursor-pointer px-4 py-2">Add</button>
-            <button class="rounded-sm bg-red-600 hover:bg-red-400 cursor-pointer text-white px-4 py-2">Delete</button>
+            <button class="rounded-sm bg-blue-600 hover:bg-blue-400 text-white cursor-pointer px-4 py-2" (click)="show()">Add</button>
+            
             
         </div>
+        <div >
+            <app-add-task  (isCanceled)="hide()" [class]="isShown ? 'flex':'hidden'" class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10 w-full bg-transparent-black h-full flex justify-center items-center "> </app-add-task>
+        </div>
         <ul  class="flex flex-col  mt-5 gap-1">
-            <li *ngFor="for let task of this.getTodoList()" class="border-blue-500 rounded-md p-2 text-j border">
-                {{task.task}}
+            <li *ngFor="for let task of this.getTodoList()" class="border-blue-500 rounded-md p-2 text-j border flex justify-between">
+                <div>
+
+                    {{task.task}}
+
+                </div>
+                <div>
+
+                    <button class="rounded-sm bg-red-600 hover:bg-red-400 cursor-pointer text-white px-4 py-2" (click)="onDeleteClick(task)">Delete</button>
+                </div>
+                
             </li>
         </ul>
+        <div class="flex justify-end m-5">
+
+            <button class="rounded-sm bg-red-600 hover:bg-red-400 cursor-pointer text-white px-4 py-2" (click)="onClearClick()">Clear</button>
+        </div>
    </div> 
 </div>

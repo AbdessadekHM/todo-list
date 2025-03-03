@@ -6,7 +6,7 @@ import { TodoList } from './models';
 })
 export class TaskStateService {
 
-  public todoList:TodoList[] | undefined = [
+  public todoList:TodoList[]= [
     {id:0,task:"nothing",createdDate: new Date(), isAchieved:false},
     {id:0,task:"nothing",createdDate: new Date(), isAchieved:false},
     {id:0,task:"nothing",createdDate: new Date(), isAchieved:false}

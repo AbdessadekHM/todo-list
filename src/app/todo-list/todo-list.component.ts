@@ -10,14 +10,32 @@ import { TaskStateService } from '../task-state.service';
 export class TodoListComponent implements OnInit {
   
   private todoList: TodoList[]|undefined;
+  public isShown: boolean | undefined;
+  
 
   constructor(private listState: TaskStateService){}
   ngOnInit(): void {
       this.todoList = this.listState.getTodoList();
+      console.log(this.isShown)
   }
 
   getTodoList(){
     return this.todoList
+  }
+  onDeleteClick(element: TodoList){
+    this.listState.onDelete(element)
+  }
+  onAddClick(element:TodoList){
+    this.listState.onAdd(element)
+  }
+  onClearClick(){
+    this.todoList = []
+  }
+  show(){
+    this.isShown = true
+  }
+  hide(){
+    this.isShown = false
   }
 
 
